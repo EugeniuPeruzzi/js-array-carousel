@@ -6,20 +6,24 @@ let immages = [
     '/img/03.webp',
     '/img/04.webp',
     '/img/05.webp',
-]
+];
 
-let display_img = document.querySelector('.slider')
-let slider_img = ''
+let display = document.querySelector('.slider');
+let slider_img = '';
 
 for (let i=0; i<immages.length; i++){
     console.log(immages[i])
-    
-    let display_img = immages[i]
-    slider_img += `
-            <div class="img-container">
-                <img class="img" src="${display_img}" alt="spiderman">
+    let displayImg = immages[i];
+    display.innerHTML += `
+    <div class="img-container">
+                <img class="img d-none" src="${displayImg}" alt="spiderman">
             </div>
-            `
-}
+    `;
+};
 
-display_img.innerHTML = slider_img
+let next = document.querySelector('.next');
+let back = document.querySelector('.back')
+
+next = addEventListener('click', function(){
+    
+})
