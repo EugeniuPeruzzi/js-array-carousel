@@ -1,7 +1,7 @@
 'use strict';
 
 let immages = [
-    '/img/01.webp',
+    './img/01.webp',
     '/img/02.webp',
     '/img/03.webp',
     '/img/04.webp',
@@ -12,18 +12,45 @@ let display = document.querySelector('.slider');
 let slider_img = '';
 
 for (let i=0; i<immages.length; i++){
-    console.log(immages[i])
     let displayImg = immages[i];
-    display.innerHTML += `
-    <div class="img-container">
-                <img class="img d-none" src="${displayImg}" alt="spiderman">
-            </div>
-    `;
-};
+    slider_img += `
+        <div class="img-container">
+            <img class="img" src="${displayImg}" alt="spiderman">
+        </div>`;   
+    };
+
+display.innerHTML = slider_img ;
+
+
+
+let dBlock = 0;
+
+let pictures = document.getElementsByClassName('img'); 
+
+pictures[dBlock].classList.add('d-block');
+
+
 
 let next = document.querySelector('.next');
-let back = document.querySelector('.back')
 
-next = addEventListener('click', function(){
-    
-})
+next.addEventListener('click', function(){
+
+    if (dBlock < immages.length - 1){
+        pictures[dBlock].classList.remove('d-block');
+        dBlock ++
+        pictures[dBlock].classList.add('d-block');
+    }
+
+
+});
+
+let back = document.querySelector('.back');
+back.addEventListener('click', function(){
+
+    if (dBlock > 0){
+        pictures[dBlock].classList.remove('d-block');
+        dBlock--
+        pictures[dBlock].classList.add('d-block');
+    }
+
+});

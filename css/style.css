@@ -12,11 +12,14 @@
 }
 
 .slider{
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
 .img-container{
+    position: absolute;
+    width: 100%;
     height: 100%;
 }
 
@@ -27,7 +30,7 @@
     object-fit: cover;
 }
 
-.d-block{
+.img.d-block{
     display: block;
 }
 
